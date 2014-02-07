@@ -72,4 +72,15 @@ var g = d3.select('#statecontainer').append('svg').attr('width', 750).attr('heig
            .attr('transform', 'translate(900,300)scale(1)translate(-900,-300)')
            .classed('l3c', function(d) { return Math.random() > 0.8 })
            .classed('republican', function(d) { return d.party == 'republican' })
-           .classed('democrat', function(d) { return d.party == 'democrat' });
+           .classed('democrat', function(d) { return d.party == 'democrat' })
+           .on('click', popup)
+
+/*
+      var t = g.selectAll('text').data(d);
+      t.enter().append('text')
+         .attr('width','200px').attr('height','100px')
+         .text('lalala');
+*/
+function popup(d) {
+  d3.select(this).classed('popup', true)
+}
