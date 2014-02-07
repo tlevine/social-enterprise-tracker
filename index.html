@@ -43,6 +43,8 @@ d3.json("us.json", function(error, topology) {
       .datum(topojson.mesh(topology, topology.objects.states, function(a, b) { return a !== b; }))
       .attr("d", path)
       .attr("class", "state-boundary");
+
+  svg.select('.state-boundary')
 });
 
 </script>
