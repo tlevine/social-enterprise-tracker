@@ -70,12 +70,7 @@ var g = d3.select('#statecontainer').append('svg').attr('width', 750).attr('heig
            .attr('d', function(d) { return d.path; })
            .attr('stroke', 'rgba(255,255,255,.2)')
            .attr('transform', 'translate(1000,1000)scale(0)translate(-1000,-1000)')
+           .attr('transform', 'translate(900,300)scale(1)translate(-900,-300)')
            .classed('l3c', function(d) { return Math.random() > 0.8 })
            .classed('republican', function(d) { return d.party == 'republican' })
            .classed('democrat', function(d) { return d.party == 'democrat' });
-
-      p.transition().duration(500)
-        .attr('fill',  function(d) { return d.color;})
-                    .delay(function(d, i) { return i * 10 })
-                    .attr('transform', 'translate(900,300)scale(1)translate(-900,-300)');
-
